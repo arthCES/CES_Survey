@@ -1,0 +1,30 @@
+<html ng-app='surveyApp'>
+
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>CES Pvt. Ltd.</title>
+
+</head>
+
+<body>
+    <div>
+        <div ui-view></div>
+    </div>
+  
+	<!--Vendors-->
+    <script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/material-design-lite/material.min.js"></script>
+    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+	
+	<!--Local-->
+    <script src="myapp.module.js"></script>
+    <script src="login/home.controller.js"></script>
+    <script src="login/authenticate.user.service.js"></script>
+	<script src="dashboard/ds.controller.js"></script>
+	
+
+</body>
+
+</html>

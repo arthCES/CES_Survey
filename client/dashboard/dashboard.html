@@ -1,29 +1,64 @@
+<div class="mdl-layout mdl-js-layout" data-ng-init="vm.onloadFun()">
 
-	 <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-				<span class="mdl-layout-title" id="title"> Application</span>
-                <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation">
-					<a class="mdl-navigation__link" href="#home">Home</a>
-					<a class="mdl-navigation__link" href="#Result">Result</a>
-
-                </nav>
-            </div>
-        </header>
-
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Settings</span>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Settings</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Change Password</a>
+            <a class="mdl-navigation__link" href="#">Sign Out</a>
+        </nav>
+    </div>
+    <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title" id="title"> Application</span>
+            <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="#">Change Password</a>
-                <a class="mdl-navigation__link" href="#">Sign Out</a>
 
+                <a class="mdl-navigation__link" ui-sref="result" ui-sref-active="result">Result</a>
+                <a class="mdl-navigation__link" ui-sref="Create survey" ui-sref-active="Create survey">Create survey</a>
+                <a class="mdl-navigation__link" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+                <span> {{vm.name}}</span>
             </nav>
         </div>
-		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--12-row"></div>
-  <div class="mdl-cell mdl-cell--4-col"></div>
-  <div class="mdl-cell mdl-cell--4-col"></div>
-</div>
-</div>
+    </header>
 
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Settings</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Change Password</a>
+            <a class="mdl-navigation__link" href="#">Sign Out</a>
+        </nav>
+    </div>
+
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="my-table">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Survey ID</th>
+                        <th>Topic</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="survey in vm.survey|itemsPerPage:5">
+                        <td class="mdl-data-table__cell--non-numeric" style="width:100px;"><a class="mdl-navigation__link" ui-sref="dashboard({survey_id:survey_id})">{{survey.survey_id}}</a>
+                        </td>
+                        <td><a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">{{survey.topic}}</a>
+                        </td>
+                        <td>{{survey.description}}</td>
+                    </tr>
+                </tbody>
+			</table>
+		</div>
+    </div>
+
+    <div class="text-center">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
+                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

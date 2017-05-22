@@ -3,23 +3,25 @@
 	'use strict';
 	angular
 		.module('surveyApp')
-		.factory('user', user);
-	user.$inject = ['$http', '$q'];
-	function user($http, $q) {
+		.factory('survey', survey);
+	survey.$inject = ['$http', '$q', '$stateParams'];
+	function survey($http, $q, $stateParams) {
 		return {
-			getUser: function () {
-				var abc = $q.defer();
-				$http
-					.get('https://api.myjson.com/bins/c22vt')
+			getsurvey: function () {
+				var detail = $q.defer();
+				$http({
+					url : 'https://api.myjson.com/bins/pg57d',
+					method : 'get'
+				})
 					.then(
 						function (response) {
-							abc.resolve(response.data);
+							detail.resolve(response.data);
 						},
 						function (error) {
-							abc.reject(error);
+							detail.reject(error);
 						}
 					);
-				return abc.promise;
+				return detail.promise;
 			}
 		};
 	}

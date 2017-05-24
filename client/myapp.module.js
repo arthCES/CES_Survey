@@ -2,7 +2,7 @@
 (function () {
     'use strict';
     angular
-        .module('surveyApp', ['ui.router'])
+        .module('surveyApp', ['ui.router', 'smart-table'])
 	    .config(function ($httpProvider) {
 		  //Enable cross domain calls
 		    $httpProvider.defaults.useXDomain = true;
@@ -33,15 +33,32 @@
 			    controllerAs : 'vm'
             })
 		    .state('dashboard', {
-                url: '/',
+                url: '/dashboard',
                 templateUrl: 'dashboard/dashboard.html',
                 controller: 'dsController',
 			    controllerAs : 'vm'
+            })
+		     .state('result', {
+                url:  '/result',
+                templateUrl: 'vote/info.html',
+                controller: 'ResultController',
+			    controllerAs : 'vm'
+            })
+		      .state('survey', {
+                url:  '/survey',
+                templateUrl: 'survey/survey_detail.html'
+            })
+		       .state('Create survey', {
+                url:  '/Create_survey',
+                templateUrl: 'survey/Create_survey.html',
+                controller: 'CreatesurveyController',
+			    controllerAs : 'vm'
+            })
+		       .state('Employee Details', {
+                url:  '/Employee_Details',
+                templateUrl: 'register/Employee_Details.html'
             });
 		
-		
-		
     }
+	
 })();
-
-

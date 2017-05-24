@@ -26,13 +26,15 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="#">Change Password</a>
             <a class="mdl-navigation__link" href="#">Sign Out</a>
+
         </nav>
     </div>
 
 
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
-            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="my-table">
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" st-table="display_records" st-safe-src="vm.survey">
+
                 <thead>
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">Survey ID</th>
@@ -41,24 +43,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr dir-paginate="survey in vm.survey|itemsPerPage:5">
-                        <td class="mdl-data-table__cell--non-numeric" style="width:100px;"><a class="mdl-navigation__link" ui-sref="dashboard({survey_id:survey_id})">{{survey.survey_id}}</a>
+                    <tr ng-repeat="survey in display_records">
+                        <td class="mdl-data-table__cell--non-numeric" data-title="'Survey ID'"><a class="mdl-navigation__link" ui-sref="dashboard({survey_id:survey_id})">{{survey.survey_id}}</a>
                         </td>
-                        <td><a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">{{survey.topic}}</a>
+                        <td data-title="'Topic'"><a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">{{survey.topic}}</a>
                         </td>
-                        <td>{{survey.description}}</td>
+                        <td data-title="'Description'">{{survey.description}}</td>
                     </tr>
                 </tbody>
-			</table>
-		</div>
-    </div>
+                <tfoot>
+                    <tr>
+                        <div class="mdl-grid">
+                            <td class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop"></td>
 
-    <div class="text-center">
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
-                <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true">
-                </dir-pagination-controls>
-            </div>
+                            <td st-pagination="" st-items-by-page="8" st-displayed-pages="7">
+                            </td>
+                        </div>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </div>
 </div>

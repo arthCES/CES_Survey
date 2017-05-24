@@ -9,17 +9,14 @@
     dsController.$inject = ['$scope', '$http', '$window', 'survey', '$state'];
     /*Used named functions instead of passing an anonymous function in as a callback.*/
     function dsController($scope, $http, $window, survey, $state) {
-        var vm = this; 
-        vm.survey_id = null;
-        vm.description = null;
-		vm.onloadFun = function (value) {
-
-			survey.getsurvey().then(
+        var vm = this;
+	    vm.onloadFun = function (value) {
+		   survey.getsurvey().then(
 				function (response) {
 				//	alert("Angularjs call function on page load");
 					console.log(response);
 					vm.survey = response.items;
-			    },
+				},
 				function (response) {
 					console.log("reject", response);
 				}
@@ -28,5 +25,5 @@
             vm.name = $window.sessionStorage.getItem("SavedString");
 			console.log(vm.name); 
 		};
-    }
+	} 
 })();

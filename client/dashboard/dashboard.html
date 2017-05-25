@@ -36,6 +36,7 @@
             <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" st-table="display_records" st-safe-src="vm.survey">
 
                 <thead>
+
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">Survey ID</th>
                         <th>Topic</th>
@@ -54,10 +55,13 @@
                 <tfoot>
                     <tr>
                         <div class="mdl-grid">
+
                             <td class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop"></td>
 
                             <td st-pagination="" st-items-by-page="8" st-displayed-pages="7">
                             </td>
+                            <td><input st-search="" class="form-control" placeholder="global search ..." type="text"/></td>
+
                         </div>
                     </tr>
                 </tfoot>

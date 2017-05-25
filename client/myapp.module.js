@@ -35,8 +35,13 @@
 		    .state('dashboard', {
                 url: '/dashboard',
                 templateUrl: 'dashboard/dashboard.html',
-                controller: 'dsController',
-			    controllerAs : 'vm'
+                controller: 'dsController as vm',
+			    controllerAs : 'vm',
+			    resolve: {
+                    result : function (survey) {
+                        return survey.getsurvey();
+                    }
+				}
             })
 		     .state('result', {
                 url:  '/result',

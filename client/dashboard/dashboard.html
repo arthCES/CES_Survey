@@ -1,29 +1,71 @@
+<div class="mdl-layout mdl-js-layout" data-ng-init="vm.onloadFun()">
 
-	 <div class="mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-				<span class="mdl-layout-title" id="title"> Application</span>
-                <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation">
-					<a class="mdl-navigation__link" href="#home">Home</a>
-					<a class="mdl-navigation__link" href="#Result">Result</a>
-
-                </nav>
-            </div>
-        </header>
-
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Settings</span>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Settings</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Change Password</a>
+            <a class="mdl-navigation__link" href="#">Sign Out</a>
+        </nav>
+    </div>
+    <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title" id="title"> Application</span>
+            <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="#">Change Password</a>
-                <a class="mdl-navigation__link" href="#">Sign Out</a>
 
+                <a class="mdl-navigation__link" ui-sref="result" ui-sref-active="result">Result</a>
+                <a class="mdl-navigation__link" ui-sref="Create survey" ui-sref-active="Create survey">Create survey</a>
+                <a class="mdl-navigation__link" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+                <span> {{vm.name}}</span>
             </nav>
         </div>
-		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--12-row"></div>
-  <div class="mdl-cell mdl-cell--4-col"></div>
-  <div class="mdl-cell mdl-cell--4-col"></div>
-</div>
-</div>
+    </header>
 
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Settings</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Change Password</a>
+            <a class="mdl-navigation__link" href="#">Sign Out</a>
+
+        </nav>
+    </div>
+
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" st-table="display_records" st-safe-src="vm.survey">
+
+                <thead>
+
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Survey ID</th>
+                        <th>Topic</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="survey in display_records">
+                        <td class="mdl-data-table__cell--non-numeric" data-title="'Survey ID'"><a class="mdl-navigation__link" ui-sref="dashboard({survey_id:survey_id})">{{survey.survey_id}}</a>
+                        </td>
+                        <td data-title="'Topic'"><a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">{{survey.topic}}</a>
+                        </td>
+                        <td data-title="'Description'">{{survey.description}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <div class="mdl-grid">
+
+                            <td class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop"></td>
+
+                            <td st-pagination="" st-items-by-page="8" st-displayed-pages="7">
+                            </td>
+                            <td><input st-search="" class="form-control" placeholder="global search ..." type="text"/></td>
+
+                        </div>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="mdl-layout mdl-js-layout" data-ng-init="vm.onloadFun()">
+    <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <a class="mdl-navigation__link" id="title" ui-sref="survey" ui-sref-active="survey">Survey</a>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+
+                <a class="mdl-navigation__link" ui-sref="result" ui-sref-active="result">Result</a>
+                <a class="mdl-navigation__link" ui-sref="dashboard" ui-sref-active="dashboard">Dashboard</a>
+                <a class="mdl-navigation__link" ui-sref="Create survey" ui-sref-active="Create survey">Create survey</a>
+                <a class="mdl-navigation__link" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+              <emp-name> {{vm.name}}</emp-name>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+
+        <div class="mdl-grid">
+            <div>Total survey : {{vm.count}}</div>
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" st-table="display_survey" st-safe-src="vm.createdSurvey">
+                <thead>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Description</th>
+                        <th>SelectedTeam</th>
+                        <th>Date</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="survey in display_survey">
+                        <td>{{ survey.topic}}
+                        </td>
+                        <td>{{ survey.survey }}
+                        </td>
+                        <td>{{ survey.selectedTeam.team }}
+                        </td>
+                        <td>{{ survey.date }}
+                        </td>
+                        <td><button ng-click="vm.deleteSurvey(survey)">Delete</button>
+                        </td>
+
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <div class="mdl-grid">
+
+                            <td class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop"></td>
+                            <td class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop"></td>
+                            <td st-pagination="" st-items-by-page="5" st-displayed-pages="7">
+                            </td>
+                            <td><input st-search="" class="form-control" placeholder="global search ..." type="text" /></td>
+
+                        </div>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+
+
+    </div>
+
+</div>

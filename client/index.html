@@ -1,10 +1,34 @@
 <html ng-app='surveyApp'>
 
 <head>
+    <link rel="stylesheet" href="node_modules/material-design-lite/dist/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css.map" />
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="assets/style/style.css">
+	
+	<link rel="stylesheet" href="sassgulp/css/.css/style.css">
+ 
+    
     <title>CES Pvt. Ltd.</title>
+	
+	 <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="CHANGE-ME">
+
+    <!-- Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CHANGE-ME">
+
+    <!-- Windows 8 -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="theme-color" content="#000000">
 
 </head>
 
@@ -14,15 +38,37 @@
     </div>
   
 	<!--Vendors-->
-    <script src="node_modules/angular/angular.min.js"></script>
-	<script src="node_modules/material-design-lite/material.min.js"></script>
-    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <script src ="node_modules/angular/angular.min.js"></script>
+	<script src ="node_modules/material-design-lite/material.min.js"></script>
+	<script src ="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src ="node_modules/angular-smart-table/dist/smart-table.min.js"></script>
 	
+    <!-- Latest compiled JavaScript -->
+
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!--Local-->
     <script src="myapp.module.js"></script>
-    <script src="login/home.controller.js"></script>
-    <script src="login/authenticate.user.service.js"></script>
-	<script src="dashboard/ds.controller.js"></script>
+    <script src="app/login/home.controller.js"></script>
+    <script src="app/login/authenticate.user.service.js"></script>
+	<script src="app/directive/grid.directive.js"></script>
+	<script src ="app/directive/inner_grid.directive.js"></script>
+	<script src="app/dashboard/ds.controller.js"></script>
+	<script src="app/dashboard/dashboard.service.js"></script>
+	<script src="app/survey/create_survey.controller.js"></script>
+	<script src="app/vote/ResultController.js"></script>
+	<script src="app/vote/result.service.js"></script>
+	<script src="app/survey/StorageService.js"></script>
+	<script src="app/survey/read.survey.js"></script>
+	<script src="app/directive/directive.controller.js"></script>
+	<script src="app/directive/directive.service.js"></script>
+	<script src="custom_directive.js"></script>
 	
 
 </body>

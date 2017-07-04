@@ -1,0 +1,72 @@
+<div class="mdl-layout mdl-js-layout" data-ng-init="vm.onloadFun()">
+   <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <a class="mdl-navigation__link" id="title" ui-sref="Create survey" ui-sref-active="Create survey"> Create Survey</a>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+
+                <a class="mdl-navigation__link" ui-sref="result" ui-sref-active="result">Result</a>
+                <a class="mdl-navigation__link" ui-sref="dashboard" ui-sref-active="dashboard">Dashboard</a>
+                <a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">Survey</a>
+                <a class="mdl-navigation__link" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+              <emp-name> {{vm.name}}</emp-name>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+
+        <div class="demo-card-square mdl-card mdl-shadow--6dp " id="surveycard" >
+            <div class="mdl-cell mdl-cell--12-col">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+
+                        <form name="SurveyForm" ng-submit="vm.submit(vm.emp_id,vm.password)" novalidate form-autofill-fix>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                                    <label for="input_text" class="mdl-textfield__label">Survey Topic</label>
+                                    <input type="text" class="mdl-textfield__input" id="input_text" ng-model="vm.topic" />
+                                </div>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                                    <label for="input_text" class="mdl-textfield__label">Survey Details</label>
+                                    <input type="text" class="mdl-textfield__input" id="input_text" ng-model="vm.survey" />
+                                </div>
+                            </div>
+
+
+                            <br>
+                            <div>
+                                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+
+                                    <label class="mdl-selectfield__label" for="selectedTeam">Select Employee</label>
+                                    <select class="mdl-selectfield__select" ng-model="vm.selectedTeam" id="selectedTeam" ng-options="y.team for (x, y) in vm.Team">
+                                    </select>
+
+                                    <span> {{selectedTeam.team}}</span>
+                                </div>
+                            </div>
+                            <br>
+                          
+							<div><label for="survey_date">Survey Date  </label><input type="date" ng-model="vm.date"></div>
+                           
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <br>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--cyan" type="submit" value="Submit" mdl-cell mdl-cell--12-col>Submit</button>&nbsp;&nbsp;
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--cyan" type="reset" value="Reset" mdl-cell mdl-cell--12-col>Reset</button>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+</div>

@@ -10,7 +10,7 @@
 			getUser: function () {
 				var abc = $q.defer();
 				$http
-					.get('https://api.myjson.com/bins/c22vt')
+					.get('https://api.myjson.com/bins/18yqex')
 					.then(
 						function (response) {
 							abc.resolve(response.data);

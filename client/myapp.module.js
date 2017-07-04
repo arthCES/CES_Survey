@@ -2,7 +2,7 @@
 (function () {
     'use strict';
     angular
-        .module('surveyApp', ['ui.router'])
+        .module('surveyApp', ['ui.router', 'smart-table', 'ui.bootstrap','nvd3','surveyApp.dashboard'])
 	    .config(function ($httpProvider) {
 		  //Enable cross domain calls
 		    $httpProvider.defaults.useXDomain = true;
@@ -16,32 +16,11 @@
             });
         })
         .config(homeConfig);
-
-
-    homeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-
-    function homeConfig($stateProvider, $urlRouterProvider) {
+      homeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+      function homeConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider
             .when('', '/')
             .otherwise('/');
-
-        $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: 'login/home.html',
-                controller: 'SurveyController',
-			    controllerAs : 'vm'
-            })
-		    .state('dashboard', {
-                url: '/',
-                templateUrl: 'dashboard/dashboard.html',
-                controller: 'dsController',
-			    controllerAs : 'vm'
-            });
-		
-		
-		
     }
+	
 })();
-
-

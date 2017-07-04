@@ -18,6 +18,7 @@
 			user.getUser().then(
 				function (response) {
 					console.log(response);
+					// window.alert(vm.emp_id);
 					$state.go('dashboard');
 					 
 				},
@@ -25,7 +26,7 @@
 					console.log("reject", response);
 				}
 			);
-            
+			$window.sessionStorage.setItem("SavedString", vm.emp_id);
         };
     }
 })();

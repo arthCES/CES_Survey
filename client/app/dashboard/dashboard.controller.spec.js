@@ -8,7 +8,7 @@ describe('SurveyTest Controller', function () {
 	var survey = {};
 	var ctrl = null;
 	
-	beforeEach(module('surveyApp'));
+	beforeEach(module('surveyApp.dashboard'));
     beforeEach(inject(function (_$controller_,_$location_, _$q_, _$rootScope_, _survey_) {
 		$controller = _$controller_;
 		$location = _$location_;

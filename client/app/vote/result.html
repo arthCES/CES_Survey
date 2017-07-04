@@ -1,0 +1,18 @@
+<div>   
+    <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <a class="mdl-navigation__link" id="title" ui-sref="result" ui-sref-active="result">Result</a>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+
+                <a class="mdl-navigation__link" ui-sref="Create survey" ui-sref-active="Create survey">Create survey</a>
+                <a class="mdl-navigation__link" ui-sref="dashboard" ui-sref-active="dashboard">Dashboard</a>
+
+                <a class="mdl-navigation__link" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+                <span> {{vm.name}}</span>
+            </nav>
+        </div>
+    </header>
+	
+   <div ui-view='info'></div>
+</div>	

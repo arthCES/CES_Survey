@@ -1,0 +1,25 @@
+<div class="mdl-layout mdl-js-layout" data-ng-init="vm.onloadFun()">
+    <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title" id="title">Survey Application</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+
+                <a class="mdl-navigation__link" ui-sref="result" ui-sref-active="result">Result</a>
+                <a class="mdl-navigation__link" ui-sref="Create survey" ui-sref-active="Create survey">Create survey</a>
+                <a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">Survey</a>
+                <a class="mdl-navigation__link" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+                <emp-name> {{vm.name}}</emp-name>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Settings</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Change Password</a>
+            <a class="mdl-navigation__link" href="#">Sign Out</a>
+        </nav>
+    </div>
+    <div ui-view='table'></div>
+	<jsdate></jsdate>
+</div>

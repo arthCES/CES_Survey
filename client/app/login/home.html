@@ -1,0 +1,54 @@
+<div class="mdl-grid">
+	
+    <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"> <div class="customDiv" style="	margin: 3px;
+			min-height: 600px;
+			background-color: white;
+			text-align: center;
+			font-size: large;"></div></div>
+    
+    <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-layout-spacer"></div>
+        <div class="demo-card-square mdl-card mdl-shadow--4dp">
+
+            <div><img class="logo" src="assets/images/logo.png">
+            </div>
+
+
+            <div class="mdl-cell mdl-cell--12-col">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                        <form name="loginForm" ng-submit="vm.submit(vm.emp_id,vm.password)" novalidate form-autofill-fix>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label ">
+                                    <label for="input_text" class="mdl-textfield__label">Employee ID</label>
+                                    <input type="text" class="mdl-textfield__input" id="input_text" ng-model="vm.emp_id" pattern="[a-zA-Z0-9/]+" />
+                                    <span class="mdl-textfield__error">No special Char !!</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <label for="input_password" class="mdl-textfield__label">Password</label>
+                                <input type="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" class="mdl-textfield__input" id="input_password" ng-model="vm.password" />
+
+                                <span class="mdl-textfield__error">Uppercase lowercase and number</span>
+
+                            </div>
+
+
+
+                            <div>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--blue-800 mdl-color-text--white mdl-cell mdl-cell--12-col">Login</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+
+</div>

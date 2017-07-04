@@ -1,0 +1,39 @@
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
+
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" st-table="display_records" st-safe-src="vm.survey">
+
+            <thead>
+
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Survey ID</th>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="survey in display_records">
+                    <td class="mdl-data-table__cell--non-numeric" data-title="'Survey ID'"><a class="mdl-navigation__link" ui-sref="dashboard({survey_id:survey_id})" href="#/{{survey.survey_id}}">{{survey.survey_id}}</a>
+                    </td>
+                    <td data-title="'Topic'"><a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">{{survey.topic}}</a>
+                    </td>
+                    <td data-title="'Description'">{{survey.description}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <div class="mdl-grid">
+
+                        <td class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop"></td>
+
+                        <td st-pagination="" st-items-by-page="8" st-displayed-pages="7">
+                        </td>
+                        <td><input st-search="" class="form-control" placeholder="global search ..." type="text" /></td>
+
+                    </div>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="mdl-layout mdl-js-layout" data-ng-init="vm.onloadFun()">
+    <header class="mdl-layout--fixed-header">
+        <div class="mdl-layout__header-row">
+            <a class="mdl-navigation__link" id="title" ui-sref="Employee Details" ui-sref-active="Employee Details">Employee Details</a>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+
+                <a class="mdl-navigation__link" ui-sref="Create survey" ui-sref-active="Create survey">Create survey</a>
+                <a class="mdl-navigation__link" ui-sref="dashboard" ui-sref-active="dashboard">Dashboard</a>
+
+                <a class="mdl-navigation__link" ui-sref="result" ui-sref-active="result">result</a>
+                <emp-name> {{vm.name}}</emp-name>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+        <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"></div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">
+            <b>Details</b><br>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="my-table">
+                        <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Emp_ID</th>
+                                <th>Name</th>
+                                <th>E-mail</th>
+                                <th>Password</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="survey in vm.survey">
+                                <td class="mdl-data-table__cell--non-numeric" style="width:100px;"><a class="mdl-navigation__link" ui-sref="dashboard({survey_id:survey_id})">{{survey.survey_id}}</a>
+                                </td>
+                                <td><a class="mdl-navigation__link" ui-sref="survey" ui-sref-active="survey">{{survey.topic}}</a>
+                                </td>
+                                <td>{{survey.description}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+
+        </div>
+
+    </div>
+
+    <div ng-controller="modalController as vm">
+        <p>Hello {{vm.name}}!</p>
+
+        <button type="button" data-confirm-popup-text="welcome to CES" data-confirm-popup-header="CES Survey Application" class="btn btn-danger btn-xs" data-ng-class="{disabled : vm.disable}" data-ng-if="vm.show">Welcome</button>
+    </div>

@@ -26,7 +26,8 @@ describe('SurveyTest Controller', function () {
 		});
         ctrl = $controller('dsController', {$scope: $scope});
 		$rootscope.$apply();
-	    survey.getsurvey();
-        expect(angular.equals(ctrl.results)).toBe(false);
+	   
+		expect(survey.getsurvey).toHaveBeenCalled();
+       
 	});
 });
